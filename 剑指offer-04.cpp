@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool findNumberIn2DArray(vector<vector<int>>& matrix, int target) {
-        //二叉搜索树的思想
+        //鍒╃敤浜屽弶鎼滅储鏍戠殑鎬濇兂
         if(matrix.size() <= 0 || matrix[0].size() <= 0)
             return false;
         int m = matrix.size();
