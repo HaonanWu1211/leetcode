@@ -5,7 +5,7 @@ public:
             return n;
         int p = 0, q = 1;
         for(int i = 2; i <= n; i++){
-            int r = (p + q) % 1e7;
+            int r = (p + q) % 1000000007;
             p = q;
             q = r;
         }
