@@ -55,7 +55,7 @@ public:
     vector<int> preorderTraversal(TreeNode* root) {
 		stack<TreeNode*> s;
 		vector<int> res;
-		while(root != nullptr || !empty(s)){
+		while(root != nullptr || !s.empty()){
 			while(root != nullptr){
 				s.push(root);
 				res.push_back(root->val);
