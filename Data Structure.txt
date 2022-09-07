@@ -1,0 +1,10 @@
+双向队列:
+适用于同时需要往队首加元素或往队尾加元素的情况
+deque<int> dq;
+dq.front(); //返回第一个元素
+dq.back(); //返回最后一个元素
+dq.push_front(x); //往队首加
+dq.pop_front(); //弹出第一个元素
+dq.push_back(x); //往队尾加
+dq.pop_back(); //弹出最后一个元素
+vector<int> vec_dq = vector<int>(dq.begin(), dq.end()); //deque转vector
