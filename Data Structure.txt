@@ -13,7 +13,7 @@ vector<int> vec_dq = vector<int>(dq.begin(), dq.end()); //deque转vector
 数值转字符串内置函数：
 to_string();
 eg: 
-    int val
+    int val;
     string str = to_string(val);
 字符串转数值内置函数:
 stoi();
@@ -33,4 +33,17 @@ priority_queue<int> pq; //大根堆
 priority_queue<int, vector<int>, greater<int>> pq; //小根堆
 q.push(x);  //基于优先级在适当位置插入元素
 q.top(); //返回具有最高优先级的元素值
+################################################################################
+返回vector中最大与最小元素：
+vector<int> vec;
+int maxVal = *max_element(vec.begin(), vec.end());
+int minVal = *min_element(vec.begin(), vec.end());
+################################################################################
+string中字符串查找:
+find();
+eg:
+   string str;
+   int loc = str.find("aaa", 0); // 从索引0开始寻找字符串"aaa"第一次出现的位置
+return value:
+   如果没找到就返回string::npos
 ################################################################################
