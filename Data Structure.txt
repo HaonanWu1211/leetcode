@@ -21,6 +21,8 @@ stoi(字符串, 起始位置, n进制);
 eg:
     string str;
     int val = stoi(str);
+stof(); //string转float
+stod(); //string转double
 ################################################################################
 C++内置函数next_permutation()找当前排列的下一个排列(按字典升序的下一个序列),不会重复
 usage:
@@ -30,9 +32,20 @@ return value:
 ################################################################################
 优先队列：(可以实现最大堆与最小堆，默认是大根堆)
 priority_queue<int> pq; //大根堆
-priority_queue<int, vector<int>, greater<int>> pq; //小根堆
+priority_queue<int, vector<int>, greater<int>> pq; //小根堆 -- less<int> 前面小于后面返回true greater<int> 前面大于后面返回true
 q.push(x);  //基于优先级在适当位置插入元素
 q.top(); //返回具有最高优先级的元素值
+
+自定义优先队列的优先级：
+struct node{
+     int a;
+};
+struct cmp{
+    bool operator()(const node& n1, const node& n2){
+    	return n1.a < n2.a;
+    }
+};
+priority_queue<node, vector<node>, cmp> pq; // 返回true的放在前面，越往后优先级越高，故为大顶堆
 ################################################################################
 返回vector中最大与最小元素：
 vector<int> vec;
@@ -46,4 +59,10 @@ eg:
    int loc = str.find("aaa", 0); // 从索引0开始寻找字符串"aaa"第一次出现的位置
 return value:
    如果没找到就返回string::npos
+################################################################################
+自定义排序规则：
+vector<string> vec;
+sort(vec.begin(), vec.end(), [](string a, string b){ // 用[]表示匿名函数名
+   return a+b < b+a; // 返回true---a排在前面;返回false---a排在后面
+});
 ################################################################################
